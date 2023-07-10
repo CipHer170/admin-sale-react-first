@@ -1,14 +1,14 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 
-const DataContext = createContext();
+const productContext = createContext();
 
 function Provider({ children }) {
   const [product, setProduct] = useState();
 
   const getData = async () => {
     const res = await axios.get(
-      `https://dashboard-first-default-rtdb.firebaseio.com/dashboard.json`
+      `https://farman-5f6d8-default-rtdb.firebaseio.com/dashboard.json`
     );
     setProduct(dataFormatter(res.data));
   };
@@ -18,11 +18,14 @@ function Provider({ children }) {
     setProduct,
     getData,
   };
-  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+  return (
+    <productContext.Provider value={value}>{children}</productContext.Provider>
+  );
 }
 
 export default Provider;
-export { DataContext };
+
+export { productContext };
 export function dataFormatter(data = {}) {
   const objectToArray = Object.entries(data || {});
   const newData = objectToArray.map((item) => ({
