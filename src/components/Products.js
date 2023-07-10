@@ -13,15 +13,7 @@ function Products() {
   const { product } = React.useContext(productContext);
 
   const [showMore, setShowMore] = React.useState(true);
-  // const handleShowMore = (index) => {
-  //   if (id === index) {
-  //     setShowMore(!showMore);
-  //   }
-  // console.log(e.target.id);
-  // console.log("id", id);
-  // product.filter((item) => item.id === id).map((items) => {});
-  // };
-  // добавить нужно количество продуктов !!!!
+
   return (
     <Stack sx={{ display: "flex" }} className="card">
       {product
