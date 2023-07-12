@@ -10,9 +10,9 @@ function Content() {
       setAddCart(addCart - 1);
     }
   };
-
+  // do not increase
   const handleIncrease = () => {
-    if (addCart !== amount) {
+    if (addCart <= amount) {
       setAddCart(addCart + 1);
     }
   };

@@ -12,7 +12,13 @@ function Products() {
     <Stack sx={{ display: "flex" }} className="card">
       {product?.map((productItem) => {
         const productProps = { ...productItem, closeAll, setCloseAll };
-        return <ProductCard {...productProps} key={productItem.id} />;
+        return (
+          <ProductCard
+            {...productProps}
+            productItem={productItem}
+            key={productItem.id}
+          />
+        );
       })}
     </Stack>
   );

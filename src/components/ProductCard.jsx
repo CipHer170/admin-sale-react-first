@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
+import { productContext } from "../context/productContext";
+import { Value } from "sass";
 
 export default function ProductCard({
   title,
@@ -18,10 +20,13 @@ export default function ProductCard({
   image,
   closeAll,
   setCloseAll,
+  productItem,
+  id,
 }) {
   const [showMore, setShowMore] = React.useState(false);
   const openDescription = null;
   const [addClick, setAddClick] = useState(false);
+  const { product } = useContext(productContext);
 
   const open = () => {
     setCloseAll(!closeAll);
@@ -41,12 +46,14 @@ export default function ProductCard({
     };
   }, [closeAll]);
 
-  const handleAddClick = () => {
-    setAddClick(!addClick);
+  const handleAddClick = (id) => {
+    if (id === productItem.id) {
+      setAddClick(!addClick);
+    }
   };
 
   return (
-    <Card className="card__container">
+    <Card className="card__container" id={id}>
       <CardMedia sx={{ height: 140 }} image={image} title={title} />
       <CardContent className="card__content">
         <Typography gutterBottom variant="h5" component="div">
@@ -62,9 +69,9 @@ export default function ProductCard({
           Learn More
         </Button>
         {addClick ? (
-          <Content handleAddClick={handleAddClick} />
+          <Content productItem={productItem} id={id} />
         ) : (
-          <Button size="small" onClick={() => handleAddClick()}>
+          <Button size="small" onClick={() => handleAddClick(id)}>
             <AddShoppingCartIcon />
           </Button>
         )}
