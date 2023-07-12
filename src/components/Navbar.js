@@ -14,6 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { productContext } from "../context/productContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,10 +59,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const { addCart, setAddCart } = React.useContext(productContext);
 
+  React.useEffect(() => {
+    window.localStorage.setItem(
+      "added elements count",
+      JSON.stringify(addCart)
+    );
+  }, [addCart]);
+
+  React.useEffect(() => {
+    const storedItems = JSON.parse(localStorage.getItem("addCart"));
+    setAddCart(storedItems);
+  }, []);
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -177,7 +189,7 @@ function Navbar() {
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={addCart} color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>

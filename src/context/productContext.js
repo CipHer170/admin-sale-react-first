@@ -5,6 +5,11 @@ const productContext = createContext();
 
 function Provider({ children }) {
   const [product, setProduct] = useState();
+  const [addCart, setAddCart] = useState([]);
+
+  const handleAddCart = (id) => {
+    return addCart.find((item) => item.id === id)?.amount || 0;
+  };
 
   const getData = async () => {
     const res = await axios.get(
@@ -17,6 +22,10 @@ function Provider({ children }) {
     product,
     setProduct,
     getData,
+    addCart,
+    setAddCart,
+    handleAddCart,
+    // getItemQuantity,
   };
   return (
     <productContext.Provider value={value}>{children}</productContext.Provider>
