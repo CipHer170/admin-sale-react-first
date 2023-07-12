@@ -64,16 +64,11 @@ function Navbar() {
   const { addCart, setAddCart } = React.useContext(productContext);
 
   React.useEffect(() => {
-    window.localStorage.setItem(
-      "added elements count",
-      JSON.stringify(addCart)
-    );
+    localStorage.setItem("addCart", JSON.stringify(addCart));
+    const storedItems = JSON.parse(localStorage.getItem("addCart"));
+    setAddCart(addCart);
   }, [addCart]);
 
-  React.useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("addCart"));
-    setAddCart(storedItems);
-  }, []);
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };

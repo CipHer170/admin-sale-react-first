@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Content from "./Content";
 
 export default function ProductCard({
   title,
@@ -17,10 +18,10 @@ export default function ProductCard({
   image,
   closeAll,
   setCloseAll,
-  handleAddClick,
 }) {
   const [showMore, setShowMore] = React.useState(false);
   const openDescription = null;
+  const [addClick, setAddClick] = useState(false);
 
   const open = () => {
     setCloseAll(!closeAll);
@@ -40,6 +41,10 @@ export default function ProductCard({
     };
   }, [closeAll]);
 
+  const handleAddClick = () => {
+    setAddClick(!addClick);
+  };
+
   return (
     <Card className="card__container">
       <CardMedia sx={{ height: 140 }} image={image} title={title} />
@@ -56,9 +61,13 @@ export default function ProductCard({
         <Button size="small" onClick={open}>
           Learn More
         </Button>
-        <Button size="small" onClick={() => handleAddClick()}>
-          <AddShoppingCartIcon />
-        </Button>
+        {addClick ? (
+          <Content handleAddClick={handleAddClick} />
+        ) : (
+          <Button size="small" onClick={() => handleAddClick()}>
+            <AddShoppingCartIcon />
+          </Button>
+        )}
       </CardActions>
     </Card>
   );
