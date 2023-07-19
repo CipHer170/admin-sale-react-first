@@ -13,7 +13,7 @@ function Provider({ children }) {
 
   const getData = async () => {
     const res = await axios.get(
-      `https://farman-5f6d8-default-rtdb.firebaseio.com/dashboard.json`
+      `https://shop-5138f-default-rtdb.firebaseio.com/dashboard.json`
     );
     setProduct(dataFormatter(res.data));
   };

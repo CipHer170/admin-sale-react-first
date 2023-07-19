@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useNavigate } from "react";
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
 import { productContext } from "../context/productContext";
 import { Value } from "sass";
-
+import LearMore from "./LearMore";
 export default function ProductCard({
   title,
   description,
@@ -27,13 +27,16 @@ export default function ProductCard({
   const openDescription = null;
   const [addClick, setAddClick] = useState(false);
   const { product } = useContext(productContext);
+  // const navigate = useNavigate();
 
   const open = () => {
     setCloseAll(!closeAll);
 
-    setTimeout(() => {
-      setShowMore(!showMore);
-    }, 0);
+    // setTimeout(() => {
+    //   setShowMore(!showMore);
+    // }, 0);
+    // navigate("/product-detail");
+    // navigate("");
   };
 
   useEffect(() => {
@@ -62,12 +65,12 @@ export default function ProductCard({
         <Typography gutterBottom variant="h5" component="div">
           {price}
         </Typography>
-        {showMore && <p className="btn-learnMore">{description}</p>}
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
         <Button size="small" onClick={open}>
-          Learn More
+          <a href="src/components/LearMore.js">Learn More</a>
         </Button>
+
         {addClick ? (
           <Content productItem={productItem} id={id} />
         ) : (
