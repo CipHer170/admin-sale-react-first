@@ -35,6 +35,7 @@ function Provider({ children }) {
 export default Provider;
 
 export { productContext };
+
 export function dataFormatter(data = {}) {
   const objectToArray = Object.entries(data || {});
   const newData = objectToArray.map((item) => ({

@@ -1,5 +1,4 @@
 import * as React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { productContext } from "../context/productContext";
 import { Stack } from "@mui/material";
 import ProductCard from "./ProductCard";

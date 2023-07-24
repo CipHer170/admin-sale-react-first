@@ -1,21 +1,22 @@
 import React, { useContext, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
-import { ProductContext } from "./context/productContext";
+import Provider, { productContext } from "./context/productContext";
 
 function AppContainer() {
-  // const { getData } = useContext(ProductContext);
+  const { getData } = useContext(productContext);
 
   useEffect(() => {
-    // getData();
+    getData();
   }, []);
 
   return (
-    <div className="App">
-      {" "}
-      <Navbar />
-      <Products />
-    </div>
+    <Provider>
+      <div className="App">
+        <Navbar />
+        <Products />
+      </div>
+    </Provider>
   );
 }
 

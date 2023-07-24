@@ -1,18 +1,18 @@
-import { useContext, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import { productContext } from "./context/productContext";
 import "./App.scss";
+import { Route, Routes } from "react-router-dom";
+import AppContainer from "./AppContainer";
+import ProductDetail from "./components/ProductDetail";
 function App() {
-  const { getData } = useContext(productContext);
-  useEffect(() => {
-    getData();
-  }, []);
   return (
-    <div className="App">
-      <Navbar />
-      <Products />
-    </div>
+    <Routes>
+      <Route to="/" path={<AppContainer />} />
+      <Route to="/product-detail" path={<ProductDetail />} />
+    </Routes>
+
+    // <div className="App">
+    //   <Navbar />
+    //   <Products />
+    // </div>
   );
 }
 

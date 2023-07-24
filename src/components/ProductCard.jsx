@@ -10,8 +10,7 @@ import {
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
 import { productContext } from "../context/productContext";
-import { Value } from "sass";
-import LearMore from "./LearMore";
+import { Link } from "react-router-dom";
 export default function ProductCard({
   title,
   description,
@@ -68,7 +67,7 @@ export default function ProductCard({
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
         <Button size="small" onClick={open}>
-          <a href="src/components/LearMore.js">Learn More</a>
+          <Link>More</Link>
         </Button>
 
         {addClick ? (
