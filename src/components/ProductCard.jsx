@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState, useNavigate } from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import {
   Button,
   Card,
@@ -9,7 +11,7 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
-import { productContext } from "../context/productContext";
+import { ProductContext } from "../context/productContext";
 import { Link } from "react-router-dom";
 export default function ProductCard({
   title,
@@ -25,7 +27,7 @@ export default function ProductCard({
   const [showMore, setShowMore] = React.useState(false);
   const openDescription = null;
   const [addClick, setAddClick] = useState(false);
-  const { product } = useContext(productContext);
+  const { product } = useContext(ProductContext);
   // const navigate = useNavigate();
 
   const open = () => {
@@ -67,7 +69,7 @@ export default function ProductCard({
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
         <Button size="small" onClick={open}>
-          <Link>More</Link>
+          <Link to="/product-detail">More</Link>
         </Button>
 
         {addClick ? (

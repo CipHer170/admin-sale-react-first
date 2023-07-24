@@ -14,7 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { productContext } from "../context/productContext";
+import { ProductContext } from "../context/productContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -61,7 +61,7 @@ function Navbar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  const { addCart, setAddCart } = React.useContext(productContext);
+  const { addCart, setAddCart } = React.useContext(ProductContext);
 
   React.useEffect(() => {
     localStorage.setItem("addCart", JSON.stringify(addCart));

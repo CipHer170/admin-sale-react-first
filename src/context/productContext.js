@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 
-const productContext = createContext();
+const ProductContext = createContext();
 
 function Provider({ children }) {
   const [product, setProduct] = useState();
@@ -25,16 +25,15 @@ function Provider({ children }) {
     addCart,
     setAddCart,
     handleAddCart,
-    // getItemQuantity,
   };
   return (
-    <productContext.Provider value={value}>{children}</productContext.Provider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 }
 
 export default Provider;
 
-export { productContext };
+export { ProductContext };
 
 export function dataFormatter(data = {}) {
   const objectToArray = Object.entries(data || {});

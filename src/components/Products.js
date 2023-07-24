@@ -1,10 +1,10 @@
 import * as React from "react";
-import { productContext } from "../context/productContext";
+import { ProductContext } from "../context/productContext";
 import { Stack } from "@mui/material";
 import ProductCard from "./ProductCard";
 
 function Products() {
-  const { product } = React.useContext(productContext);
+  const { product } = React.useContext(ProductContext);
   const [closeAll, setCloseAll] = React.useState(null);
 
   return (

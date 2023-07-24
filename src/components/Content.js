@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 import React, { useContext } from "react";
-import { productContext } from "../context/productContext";
+import { ProductContext } from "../context/productContext";
 
 function Content() {
-  const { addCart, setAddCart, amount } = useContext(productContext);
+  const { addCart, setAddCart, amount } = useContext(ProductContext);
 
   const handleDecrease = () => {
     if (addCart !== 1) {

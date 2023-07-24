@@ -2,17 +2,18 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import AppContainer from "./AppContainer";
 import ProductDetail from "./components/ProductDetail";
+import Provider from "./context/productContext";
+import React, { useContext, useEffect } from "react";
+import { ProductContext } from "./context/productContext";
+
 function App() {
   return (
-    <Routes>
-      <Route to="/" path={<AppContainer />} />
-      <Route to="/product-detail" path={<ProductDetail />} />
-    </Routes>
-
-    // <div className="App">
-    //   <Navbar />
-    //   <Products />
-    // </div>
+    <Provider>
+      <Routes>
+        <Route path="/" element={<AppContainer />} />
+        <Route path="/product-detail" element={<ProductDetail />} />
+      </Routes>
+    </Provider>
   );
 }
 
