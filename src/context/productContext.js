@@ -17,6 +17,7 @@ function Provider({ children }) {
     );
     setProduct(dataFormatter(res.data));
   };
+  // console.log(JSON.stringify(product), "hello");
 
   const value = {
     product,

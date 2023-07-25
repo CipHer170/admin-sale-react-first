@@ -13,6 +13,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
 import { ProductContext } from "../context/productContext";
 import { Link } from "react-router-dom";
+import ProductDetail from "./ProductDetail";
 export default function ProductCard({
   title,
   description,
@@ -32,23 +33,7 @@ export default function ProductCard({
 
   const open = () => {
     setCloseAll(!closeAll);
-
-    // setTimeout(() => {
-    //   setShowMore(!showMore);
-    // }, 0);
-    // navigate("/product-detail");
-    // navigate("");
   };
-
-  useEffect(() => {
-    if (closeAll !== null) {
-      setShowMore(false);
-    }
-
-    return () => {
-      openDescription && clearTimeout(openDescription);
-    };
-  }, [closeAll]);
 
   const handleAddClick = (id) => {
     if (id === productItem.id) {
@@ -68,8 +53,8 @@ export default function ProductCard({
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Button size="small" onClick={open}>
-          <Link to="/product-detail">More</Link>
+        <Button size="small" key={id}>
+          <Link to={`./product-detail/${id}`}>More</Link>
         </Button>
 
         {addClick ? (
