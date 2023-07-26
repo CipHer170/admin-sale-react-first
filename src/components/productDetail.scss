@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  &__images {
+    width: 50%;
+    display: flex;
+    flex-direction: row !important;
+
+    &_list {
+      background-color: beige;
+      width: 20%;
+      img {
+        width: 100px;
+      }
+    }
+
+    &_image {
+      width: 80%;
+      background-color: rgb(0, 131, 245);
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    background-color: red;
+    font-family: "Courier New", Courier, monospace;
+    padding: 20px;
+    &_mainInfo {
+      font-size: 30px;
+    }
+    &_description {
+      font-size: 20px;
+    }
+    &_amount {
+    }
+  }
+}
