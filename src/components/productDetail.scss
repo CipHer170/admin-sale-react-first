@@ -4,30 +4,26 @@
 }
 
 .product {
+  height: 500px;
   display: flex;
   flex-direction: row;
-  background-color: rgb(0, 0, 0);
+  background-color: yellowgreen;
   &__images {
     padding: 20px;
     width: 50%;
     display: flex;
     flex-direction: row !important;
-
-    &_list {
-      background-color: beige;
-      width: 20%;
-      height: 200px;
+    Swiper {
+      background-color: aqua;
     }
-
-    &_image {
-      width: 80%;
-      background-color: rgb(0, 131, 245);
-      justify-content: center;
-      align-items: center;
+    &_slide {
+      width: 20%;
+      background-color: aqua;
+      height: 20%;
+      object-fit: fill;
       img {
-        width: 50%;
-
-        // object-fit: contain;
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -37,7 +33,6 @@
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
-    background-color: red;
     font-family: "Courier New", Courier, monospace;
     padding: 20px;
     &_mainInfo {
