@@ -19,7 +19,6 @@ function AppContainer() {
         path="/"
         element={
           <div className="App">
-            <Navbar />
             <Products />
           </div>
         }

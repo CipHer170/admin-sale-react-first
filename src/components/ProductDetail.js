@@ -11,7 +11,7 @@ function ProductDetail({ id }) {
   const productDetail = product.find((item) => item.id === uniqueId);
 
   const { image, description, title, amount, price } = productDetail || {};
-
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const images = [
     {
       id: 1,
@@ -34,18 +34,28 @@ function ProductDetail({ id }) {
   if (productDetail === undefined) {
     return null;
   }
-  console.log(productDetail);
+
+  const goPrevious = () => {
+    console.log(images.length);
+  };
+
+  const goNext = () => {};
+
   return (
     <Stack className="product" display={"flex"} flexDirection={"row"}>
       <Stack className="product__images">
         <Stack className="product__images_list">
-          {images.map((img) => {
-            return <img src={img.img} alt="images fruit" />;
-          })}
+          <Button onClick={goPrevious}>Prev</Button>
+          <Stack height={"200px"} overflow={"hidden"}>
+            {images.map((img) => {
+              return <img src={img.img} alt="images fruit" />;
+            })}
+          </Stack>
+          <Button onClick={goNext}> Next </Button>
         </Stack>
-        <Stack className="product__images_image">
+        {/* <Stack className="product__images_image">
           <img alt="bkg" src={image} />
-        </Stack>{" "}
+        </Stack>{" "} */}
       </Stack>
       <Stack className="product__action ">
         <Stack className="product__action_mainInfo">{title}</Stack>
