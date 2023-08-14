@@ -33,14 +33,23 @@
     justify-content: space-around;
     width: 50%;
     font-family: "Courier New", Courier, monospace;
-    padding: 20px;
+    padding: 0 25px;
     &_mainInfo {
       font-size: 30px;
     }
     &_description {
       font-size: 20px;
+      padding: 10px 30px;
+      h2 {
+        padding-bottom: 5%;
+      }
     }
-    &_amount {
+
+    &_container {
+      display: flex;
+      flex-direction: row !important;
+      justify-content: flex-start;
+      gap: 20%;
     }
   }
 }

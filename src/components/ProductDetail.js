@@ -16,7 +16,6 @@ function ProductDetail({ id }) {
   const uniqueId = ProductId.id;
   const productDetail = product.find((item) => item.id === uniqueId);
   const { image, description, title, amount, price } = productDetail || {};
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const images = [
     {
@@ -59,42 +58,50 @@ function ProductDetail({ id }) {
   }
 
   return (
-    <Stack className="product" display={"flex"} flexDirection={"row"}>
-      <Stack className="product__images">
-        <Swiper
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
-          className="product__images_swiper"
-          loop={true}
-          spaceBetween={250}
-          navigation={true}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-        >
-          {imageList.map((img, index) => {
-            return (
-              <SwiperSlide className="product__images_slide" key={index}>
-                <img src={img} alt="images fruit" />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+    <Stack>
+      <Stack className="product" display={"flex"} flexDirection={"row"}>
+        <Stack className="product__images">
+          <Swiper
+            style={{
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            }}
+            className="product__images_swiper"
+            loop={true}
+            spaceBetween={250}
+            navigation={true}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Navigation, Thumbs]}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+          >
+            {imageList.map((img, index) => {
+              return (
+                <SwiperSlide className="product__images_slide" key={index}>
+                  <img src={img} alt="images fruit" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Stack>
+        <Stack className="product__action ">
+          <Stack className="product__action_mainInfo">{title}</Stack>
+          <Stack className="product__action_container">
+            <Stack className="product__action_amount ">
+              Amount:
+              {amount}
+            </Stack>
+            <Stack className="product__action_price">Cost: {price}</Stack>
+          </Stack>
+          <Stack className="product__action_addCart">
+            <Button>Add</Button>
+          </Stack>
+        </Stack>
       </Stack>
-      <Stack className="product__action ">
-        <Stack className="product__action_mainInfo">{title}</Stack>
-        <Stack className="product__action_amount ">
-          Amount:
-          {amount}
-        </Stack>
-        <Stack className="product__action_price">Cost: {price}</Stack>
-        <Stack className="product__action_addCart">
-          <Button>Add</Button>
-        </Stack>
+      <Stack className="product__action_description">
+        <h2>Description</h2>
+        {description}
       </Stack>
     </Stack>
   );
