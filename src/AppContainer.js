@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import { ProductContext } from "./context/productContext";
 import { Route, Routes } from "react-router-dom";

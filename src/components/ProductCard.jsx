@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState, useNavigate } from "react";
-import { BrowserRouter } from "react-router-dom";
+import React, { useState } from "react";
 
 import {
   Button,
@@ -11,9 +10,9 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Content from "./Content";
-import { ProductContext } from "../context/productContext";
+// import { ProductContext } from "../context/productContext";
 import { Link } from "react-router-dom";
-import ProductDetail from "./ProductDetail";
+// import ProductDetail from "./ProductDetail";
 export default function ProductCard({
   title,
   description,
@@ -25,10 +24,10 @@ export default function ProductCard({
   productItem,
   id,
 }) {
-  const [showMore, setShowMore] = React.useState(false);
-  const openDescription = null;
+  // const [showMore, setShowMore] = React.useState(false);
+  // const openDescription = null;
   const [addClick, setAddClick] = useState(false);
-  const { product } = useContext(ProductContext);
+  // const { product } = useContext(ProductContext);
   // const navigate = useNavigate();
 
   const handleAddClick = (id) => {

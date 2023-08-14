@@ -15,7 +15,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { ProductContext } from "../context/productContext";
-import Profile from "./Profile";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,16 +59,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const isMenuOpen = Boolean(anchorEl);
+  // const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { addCart, setAddCart } = React.useContext(ProductContext);
   const [userProfileOpen, setUserProfileOpen] = React.useState(false);
 
   React.useEffect(() => {
     localStorage.setItem("addCart", JSON.stringify(addCart));
-    const storedItems = JSON.parse(localStorage.getItem("addCart"));
+    // const storedItems = JSON.parse(localStorage.getItem("addCart"));
     setAddCart(addCart);
-  }, [addCart]);
+  }, [addCart, setAddCart]);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -79,20 +78,20 @@ function Navbar() {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null);
+  //   handleMobileMenuClose();
+  // };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
     setUserProfileOpen(!userProfileOpen);
   };
-  const profile = userProfileOpen ? (
-    <Profile userProfileOpen={userProfileOpen} />
-  ) : (
-    "hello"
-  );
+  // const profile = userProfileOpen ? (
+  //   <Profile userProfileOpen={userProfileOpen} />
+  // ) : (
+  //   "hello"
+  // );
 
   const menuId = "primary-search-account-menu";
 

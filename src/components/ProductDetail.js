@@ -10,47 +10,14 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-function ProductDetail({ id }) {
+function ProductDetail() {
   const { product = [] } = useContext(ProductContext);
   const ProductId = useParams();
   const uniqueId = ProductId.id;
   const productDetail = product.find((item) => item.id === uniqueId);
   const { image, description, title, amount, price } = productDetail || {};
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const images = [
-    {
-      id: 1,
-      img: "https://svgsilh.com/svg/324596.svg",
-    },
-    {
-      id: 2,
-      img: "https://www.svgrepo.com/show/117055/small-duck.svg",
-    },
-    {
-      id: 3,
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Linecons_small-cloud.svg/512px-Linecons_small-cloud.svg.png?20160307130929",
-    },
-    {
-      id: 4,
-      img: "https://svgsilh.com/svg/312035.svg",
-    },
-    {
-      id: 5,
-      img: "https://svgsilh.com/svg/324596.svg",
-    },
-    {
-      id: 6,
-      img: "https://www.svgrepo.com/show/117055/small-duck.svg",
-    },
-    {
-      id: 7,
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Linecons_small-cloud.svg/512px-Linecons_small-cloud.svg.png?20160307130929",
-    },
-    {
-      id: 8,
-      img: "https://svgsilh.com/svg/312035.svg",
-    },
-  ];
+
   const imageList = [image, image];
 
   if (productDetail === undefined) {
@@ -79,7 +46,7 @@ function ProductDetail({ id }) {
             {imageList.map((img, index) => {
               return (
                 <SwiperSlide className="product__images_slide" key={index}>
-                  <img src={img} alt="images fruit" />
+                  <img src={img} alt="images fruit" key={index} />
                 </SwiperSlide>
               );
             })}

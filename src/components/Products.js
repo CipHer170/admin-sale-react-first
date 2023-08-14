@@ -12,10 +12,15 @@ function Products() {
       sx={{ display: "grid", gridTemplateColumns: "repeat(4, auto)" }}
       className="card"
     >
-      {product?.map((productItem) => {
+      {product?.map((productItem, index) => {
         const productProps = { ...productItem, closeAll, setCloseAll };
         return (
-          <Stack className="products_" display={"grid"} direction={"row"}>
+          <Stack
+            className="products_"
+            display={"grid"}
+            direction={"row"}
+            key={index}
+          >
             <ProductCard
               {...productProps}
               productItem={productItem}
