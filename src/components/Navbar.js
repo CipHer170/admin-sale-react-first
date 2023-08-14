@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { ProductContext } from "../context/productContext";
+import Profile from "./Profile";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -62,6 +63,7 @@ function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { addCart, setAddCart } = React.useContext(ProductContext);
+  const [userProfileOpen, setUserProfileOpen] = React.useState(false);
 
   React.useEffect(() => {
     localStorage.setItem("addCart", JSON.stringify(addCart));
@@ -84,29 +86,15 @@ function Navbar() {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+    setUserProfileOpen(!userProfileOpen);
   };
+  const profile = userProfileOpen ? (
+    <Profile userProfileOpen={userProfileOpen} />
+  ) : (
+    "hello"
+  );
 
   const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -217,7 +205,6 @@ function Navbar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
     </Box>
   );
 }

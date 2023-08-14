@@ -31,10 +31,6 @@ export default function ProductCard({
   const { product } = useContext(ProductContext);
   // const navigate = useNavigate();
 
-  const open = () => {
-    setCloseAll(!closeAll);
-  };
-
   const handleAddClick = (id) => {
     if (id === productItem.id) {
       setAddClick(!addClick);

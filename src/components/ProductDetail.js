@@ -52,26 +52,12 @@ function ProductDetail({ id }) {
       img: "https://svgsilh.com/svg/312035.svg",
     },
   ];
+  const imageList = [image, image];
 
   if (productDetail === undefined) {
     return null;
   }
 
-  const goPrevious = () => {
-    console.log(images.length);
-  };
-
-  const goNext = () => {};
-
-  // Import Swiper React components
-
-  // Import Swiper styles
-
-  // export default () => {
-  //   return (
-
-  //   );
-  // };
   return (
     <Stack className="product" display={"flex"} flexDirection={"row"}>
       <Stack className="product__images">
@@ -89,13 +75,11 @@ function ProductDetail({ id }) {
           slidesPerView={1}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
         >
-          {images.map((img) => {
+          {imageList.map((img, index) => {
             return (
-              <SwiperSlide className="product__images_slide">
-                <img src={img.img} alt="images fruit" />
+              <SwiperSlide className="product__images_slide" key={index}>
+                <img src={img} alt="images fruit" />
               </SwiperSlide>
             );
           })}
@@ -111,7 +95,6 @@ function ProductDetail({ id }) {
         <Stack className="product__action_addCart">
           <Button>Add</Button>
         </Stack>
-        {/* <Stack className="product__action_description">{description}</Stack>{" "} */}
       </Stack>
     </Stack>
   );

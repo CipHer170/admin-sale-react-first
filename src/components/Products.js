@@ -8,15 +8,20 @@ function Products() {
   const [closeAll, setCloseAll] = React.useState(null);
 
   return (
-    <Stack sx={{ display: "flex" }} className="card">
+    <Stack
+      sx={{ display: "grid", gridTemplateColumns: "repeat(4, auto)" }}
+      className="card"
+    >
       {product?.map((productItem) => {
         const productProps = { ...productItem, closeAll, setCloseAll };
         return (
-          <ProductCard
-            {...productProps}
-            productItem={productItem}
-            key={productItem.id}
-          />
+          <Stack className="products_" display={"grid"} direction={"row"}>
+            <ProductCard
+              {...productProps}
+              productItem={productItem}
+              key={productItem.id}
+            />
+          </Stack>
         );
       })}
     </Stack>
