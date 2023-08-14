@@ -16,7 +16,7 @@ function ProductDetail() {
   const uniqueId = ProductId.id;
   const productDetail = product.find((item) => item.id === uniqueId);
   const { image, description, title, amount, price } = productDetail || {};
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper] = useState(null);
 
   const imageList = [image, image];
 

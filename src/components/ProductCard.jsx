@@ -13,17 +13,7 @@ import Content from "./Content";
 // import { ProductContext } from "../context/productContext";
 import { Link } from "react-router-dom";
 // import ProductDetail from "./ProductDetail";
-export default function ProductCard({
-  title,
-  description,
-  price,
-  amount,
-  image,
-  closeAll,
-  setCloseAll,
-  productItem,
-  id,
-}) {
+export default function ProductCard({ title, price, image, productItem, id }) {
   // const [showMore, setShowMore] = React.useState(false);
   // const openDescription = null;
   const [addClick, setAddClick] = useState(false);
@@ -38,7 +28,7 @@ export default function ProductCard({
 
   return (
     <Card className="card__container" id={id}>
-      <CardMedia sx={{ height: 140 }} image={image} title={title} />
+      <CardMedia sx={{ height: 200 }} image={image} title={title} />
       <CardContent className="card__content">
         <Typography gutterBottom variant="h5" component="div">
           {title.slice(0, 19)}
