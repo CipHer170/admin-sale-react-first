@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { WidthFull } from "@mui/icons-material";
 
 function ProductDetail() {
   const { product = [] } = useContext(ProductContext);

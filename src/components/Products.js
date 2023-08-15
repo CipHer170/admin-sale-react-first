@@ -1,35 +1,28 @@
 import * as React from "react";
 import { ProductContext } from "../context/productContext";
-import { Stack } from "@mui/material";
+import "./Products.scss";
 import ProductCard from "./ProductCard";
 
 function Products() {
   const { product } = React.useContext(ProductContext);
   const [closeAll, setCloseAll] = React.useState(null);
 
+  // if (product) {
+  //   product.length = 1;
+  // }
   return (
-    <Stack
-      sx={{ display: "grid", gridTemplateColumns: "repeat(4, auto)" }}
-      className="card"
-    >
+    <div className="products">
       {product?.map((productItem, index) => {
         const productProps = { ...productItem, closeAll, setCloseAll };
         return (
-          <Stack
-            className="products_"
-            display={"grid"}
-            direction={"row"}
-            key={index}
-          >
-            <ProductCard
-              {...productProps}
-              productItem={productItem}
-              key={productItem.id}
-            />
-          </Stack>
+          <ProductCard
+            {...productProps}
+            productItem={productItem}
+            key={productItem.id}
+          />
         );
       })}
-    </Stack>
+    </div>
   );
 }
 

@@ -1,32 +1,4 @@
-.card {
-  align-items: center;
-  background-color: blue;
-  flex-direction: row;
-  &__container {
-    min-width: 300px;
-    margin: 10px;
-  }
-
-  &__content {
-    position: relative;
-    display: block;
-  }
-  .btn-learnMore {
-    position: absolute;
-    color: red;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 10px;
-    border: 5px 10px;
-    background-color: rgb(255 255 255 / 0.3);
-    // backdrop-filter: blur(10px);
-    text-align: center;
-  }
-  .btn-addcart {
-    display: flex;
-    flex-direction: row;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }

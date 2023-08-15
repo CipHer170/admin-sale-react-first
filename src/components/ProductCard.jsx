@@ -1,55 +1,44 @@
 import React, { useState } from "react";
-
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Content from "./Content";
-// import { ProductContext } from "../context/productContext";
 import { Link } from "react-router-dom";
-// import ProductDetail from "./ProductDetail";
-export default function ProductCard({ title, price, image, productItem, id }) {
-  // const [showMore, setShowMore] = React.useState(false);
-  // const openDescription = null;
-  const [addClick, setAddClick] = useState(false);
-  // const { product } = useContext(ProductContext);
-  // const navigate = useNavigate();
+import no_image from "../assets/no_image.jpg";
+import "./ProductCard.scss";
+export default function ProductCard({ title, image, productItem, id, price }) {
+  const [addToCartClick, setAddToCartClick] = useState(false);
 
-  const handleAddClick = (id) => {
+  const handleAddToCartClick = (id) => {
     if (id === productItem.id) {
-      setAddClick(!addClick);
+      setAddToCartClick(!addToCartClick);
     }
   };
+  const imageNotNull = image ? image : no_image;
+
+  function priceConverter(num) {
+    if (num?.length > 3) {
+      num = num?.replace(/[^0-9.]/g, "");
+      if (num?.indexOf(".") !== -1) {
+        num = num?.substring(0, num?.indexOf(".") + 3);
+      }
+      num = num?.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+    return num;
+  }
 
   return (
-    <Card className="card__container" id={id}>
-      <CardMedia sx={{ height: 200 }} image={image} title={title} />
-      <CardContent className="card__content">
-        <Typography gutterBottom variant="h5" component="div">
-          {title.slice(0, 19)}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          {price}
-        </Typography>
-      </CardContent>
-      <CardActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Button size="small" key={id}>
-          <Link to={`./product-detail/${id}`}>More</Link>
-        </Button>
-
-        {addClick ? (
-          <Content productItem={productItem} id={id} />
-        ) : (
-          <Button size="small" onClick={() => handleAddClick(id)}>
-            <AddShoppingCartIcon />
+    <Link to={`/product-detail/${id}`} className="card">
+      <div className="card__image">
+        <img src={imageNotNull} alt="product_image" />
+      </div>
+      <div className="card__description">
+        <h2 className="card__title">{title}</h2>
+        <div className="card__action">
+          <p>{priceConverter(price)} so'm</p>
+          <Button onClick={handleAddToCartClick}>
+            <AddShoppingCartIcon />{" "}
           </Button>
-        )}
-      </CardActions>
-    </Card>
+        </div>
+      </div>
+    </Link>
   );
 }

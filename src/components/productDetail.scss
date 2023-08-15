@@ -12,17 +12,12 @@
     width: 50%;
     display: flex;
     flex-direction: row !important;
-    Swiper {
-      background-color: aqua;
-    }
     &_slide {
-      width: 20%;
-      background-color: aqua;
-      height: 20%;
-      object-fit: fill;
+      border: 10px solid black;
+      // width: 20%;
+      // height: 20%;
       img {
-        width: 100%;
-        height: 100%;
+        object-fit: cover;
       }
     }
   }
