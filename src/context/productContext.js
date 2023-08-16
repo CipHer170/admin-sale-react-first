@@ -17,6 +17,17 @@ function Provider({ children }) {
     );
     setProduct(dataFormatter(res.data));
   };
+
+  function priceConverter(num) {
+    if (num?.length > 3) {
+      num = num?.replace(/[^0-9.]/g, "");
+      if (num?.indexOf(".") !== -1) {
+        num = num?.substring(0, num?.indexOf(".") + 3);
+      }
+      num = num?.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+    return num;
+  }
   // console.log(JSON.stringify(product), "hello");
 
   const value = {
@@ -26,6 +37,7 @@ function Provider({ children }) {
     addCart,
     setAddCart,
     handleAddCart,
+    priceConverter,
   };
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
 import no_image from "../assets/no_image.jpg";
 import "./ProductCard.scss";
+import { ProductContext } from "../context/productContext";
 export default function ProductCard({ title, image, productItem, id, price }) {
   const [addToCartClick, setAddToCartClick] = useState(false);
+  const { priceConverter } = useContext(ProductContext);
 
   const handleAddToCartClick = (id) => {
     if (id === productItem.id) {
@@ -13,17 +15,6 @@ export default function ProductCard({ title, image, productItem, id, price }) {
     }
   };
   const imageNotNull = image ? image : no_image;
-
-  function priceConverter(num) {
-    if (num?.length > 3) {
-      num = num?.replace(/[^0-9.]/g, "");
-      if (num?.indexOf(".") !== -1) {
-        num = num?.substring(0, num?.indexOf(".") + 3);
-      }
-      num = num?.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-    return num;
-  }
 
   return (
     <Link to={`/product-detail/${id}`} className="card">

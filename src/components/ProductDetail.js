@@ -1,4 +1,4 @@
-import { Button, Stack } from "@mui/material";
+import { Button, div } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../context/productContext";
 import { useParams } from "react-router-dom";
@@ -9,38 +9,47 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-// import { WidthFull } from "@mui/icons-material";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 function ProductDetail() {
-  const { product = [] } = useContext(ProductContext);
+  const { product = [], priceConverter } = useContext(ProductContext);
   const ProductId = useParams();
   const uniqueId = ProductId.id;
   const productDetail = product.find((item) => item.id === uniqueId);
   const { image, description, title, amount, price } = productDetail || {};
   const [thumbsSwiper] = useState(null);
-
   const imageList = [image, image];
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAdd = () => {
+    if (quantity < amount) setQuantity((prev) => prev + 1);
+  };
+  // quantity counter
+  const handleSubtract = () => {
+    if (quantity !== 1) setQuantity((prev) => prev - 1);
+  };
 
   if (productDetail === undefined) {
     return null;
   }
+  const checkout = quantity * price;
 
   return (
-    <Stack>
-      <Stack className="product" display={"flex"} flexDirection={"row"}>
-        <Stack className="product__images">
+    <div className="product">
+      <div className="product__wrapper" display={"flex"} flexDirection={"row"}>
+        <div className="product__images">
           <Swiper
+            className="product__swiper"
             style={{
               "--swiper-navigation-color": "#fff",
               "--swiper-pagination-color": "#fff",
             }}
-            className="product__images_swiper"
             loop={true}
-            spaceBetween={250}
+            slidesPerView={1}
+            spaceBetween={10}
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            slidesPerView={1}
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
           >
@@ -52,39 +61,41 @@ function ProductDetail() {
               );
             })}
           </Swiper>
-        </Stack>
-        <Stack className="product__action ">
-          <Stack className="product__action_mainInfo">{title}</Stack>
-          <Stack className="product__action_container">
-            <Stack className="product__action_amount ">
-              Amount:
-              {amount}
-            </Stack>
-            <Stack className="product__action_price">Cost: {price}</Stack>
-          </Stack>
-          <Stack className="product__action_addCart">
-            <Button>Add</Button>
-          </Stack>
-        </Stack>
-      </Stack>
-      <Stack className="product__action_description">
+        </div>
+
+        <div className="product__detail ">
+          <h2 className="product__detail_title">{title}</h2>
+          <div className="product__action_price">
+            {priceConverter(price)} so'm
+          </div>
+          <div className="product__detail_priceList">
+            <div className="product__action_amount ">
+              <div className="quantity">
+                Quantity:
+                <p>{quantity}</p>
+                <div className="buttons">
+                  <button onClick={handleAdd}>
+                    <BiChevronUp />
+                  </button>
+                  <button onClick={handleSubtract}>
+                    <BiChevronDown />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="product__detail_addCart">
+            <Button>Checkout {priceConverter(checkout)} so'm </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="product__description">
         <h2>Description</h2>
         {description}
-      </Stack>
-    </Stack>
+      </div>
+    </div>
   );
 }
 
 export default ProductDetail;
-//<Stack className="product__images_image">
-//{/* <Button onClick={goPrevious}>Prev</Button> */}
-
-//{images.map((img) => {
-//return (
-//<Stack className="product__images_image_single" width={100}>
-//<img src={img.img} alt="images fruit" />
-//    </Stack>
-//);
-//})}
-//{/* <Button onClick={goNext}> Next </Button> */}
-//</Stack>{" "}
