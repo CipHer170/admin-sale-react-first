@@ -7,7 +7,7 @@ import "./ProductCard.scss";
 import { ProductContext } from "../context/productContext";
 export default function ProductCard({ title, image, productItem, id, price }) {
   const [addToCartClick, setAddToCartClick] = useState(false);
-  const { priceConverter } = useContext(ProductContext);
+  const { priceConverter, currency } = useContext(ProductContext);
 
   const handleAddToCartClick = (id) => {
     if (id === productItem.id) {
@@ -24,7 +24,7 @@ export default function ProductCard({ title, image, productItem, id, price }) {
       <div className="card__description">
         <h2 className="card__title">{title}</h2>
         <div className="card__action">
-          <p>{priceConverter(price)} so'm</p>
+          <p>{priceConverter(price) + currency} </p>
           <Button onClick={handleAddToCartClick}>
             <AddShoppingCartIcon />{" "}
           </Button>

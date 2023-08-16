@@ -12,7 +12,7 @@ import "swiper/css/thumbs";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 function ProductDetail() {
-  const { product = [], priceConverter } = useContext(ProductContext);
+  const { product = [], priceConverter, currency } = useContext(ProductContext);
   const ProductId = useParams();
   const uniqueId = ProductId.id;
   const productDetail = product.find((item) => item.id === uniqueId);
@@ -66,7 +66,7 @@ function ProductDetail() {
         <div className="product__detail ">
           <h2 className="product__detail_title">{title}</h2>
           <div className="product__action_price">
-            {priceConverter(price)} so'm
+            {priceConverter(price) + currency}
           </div>
           <div className="product__detail_priceList">
             <div className="product__action_amount ">
@@ -85,7 +85,10 @@ function ProductDetail() {
             </div>
           </div>
           <div className="product__detail_addCart">
-            <Button>Checkout {priceConverter(checkout)} so'm </Button>
+            <Button>
+              Checkout{" "}
+              {quantity === 1 ? "" : priceConverter(checkout) + currency}
+            </Button>
           </div>
         </div>
       </div>

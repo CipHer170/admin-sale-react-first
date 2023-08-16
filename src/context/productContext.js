@@ -29,7 +29,7 @@ function Provider({ children }) {
     return num;
   }
   // console.log(JSON.stringify(product), "hello");
-
+  const currency = " so'm";
   const value = {
     product,
     setProduct,
@@ -38,6 +38,7 @@ function Provider({ children }) {
     setAddCart,
     handleAddCart,
     priceConverter,
+    currency,
   };
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
