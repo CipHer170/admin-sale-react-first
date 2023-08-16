@@ -1,4 +1,4 @@
-import { Button, div } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../context/productContext";
 import { useParams } from "react-router-dom";
