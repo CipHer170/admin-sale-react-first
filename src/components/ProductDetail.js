@@ -36,7 +36,7 @@ function ProductDetail() {
 
   return (
     <div className="product">
-      <div className="product__wrapper" display={"flex"} flexDirection={"row"}>
+      <div className="product__wrapper" display={"flex"}>
         <div className="product__images">
           <Swiper
             className="product__swiper"
@@ -68,20 +68,16 @@ function ProductDetail() {
           <div className="product__action_price">
             {priceConverter(price) + currency}
           </div>
-          <div className="product__detail_priceList">
-            <div className="product__action_amount ">
-              <div className="quantity">
-                Quantity:
-                <p>{quantity}</p>
-                <div className="buttons">
-                  <button onClick={handleAdd}>
-                    <BiChevronUp />
-                  </button>
-                  <button onClick={handleSubtract}>
-                    <BiChevronDown />
-                  </button>
-                </div>
-              </div>
+          <div className="quantity">
+            Quantity:
+            <p>{quantity}</p>
+            <div className="buttons">
+              <button onClick={handleAdd}>
+                <BiChevronUp />
+              </button>
+              <button onClick={handleSubtract}>
+                <BiChevronDown />
+              </button>
             </div>
           </div>
           <div className="product__detail_addCart">
