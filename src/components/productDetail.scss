@@ -5,6 +5,7 @@
 
 .product {
   max-width: 1270px;
+  font-family: "Courier New", Courier, monospace;
   margin: 10px auto;
 
   &__wrapper {
@@ -44,19 +45,20 @@
     justify-content: space-evenly;
     padding: 0 20px;
     flex: 1;
-
-    &_title {
-      font-family: "Courier New", Courier, monospace;
-    }
   }
 }
 
 .quantity {
   font-size: 20px;
+  justify-content: space-around;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  &__user {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
   .buttons {
     display: flex;
     flex-direction: column;
@@ -68,6 +70,10 @@
   }
 }
 
+.stars {
+  color: rgb(255, 242, 0);
+  font-size: 30px;
+}
 @media (max-width: 1023px) {
   .product {
     max-width: 1023px;
@@ -75,13 +81,37 @@
 
     &__wrapper {
       width: 100%;
-      // height: 500px;
+      height: 700px;
       display: flex;
       flex-direction: column;
+      .swiper {
+        width: 100%;
+      }
     }
+    &__detail {
+      padding: 10px 10px;
+      height: 30%;
+    }
+    &__images {
+      width: 700px;
+      height: 70%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    // .swiper-slide {
+    // }
     &__amount {
       display: flex;
       flex: 1;
+    }
+
+    &__description {
+      border-top: 1px solid gray;
+      padding: 50px 20px 0 20px;
     }
   }
 }

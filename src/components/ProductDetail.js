@@ -65,27 +65,31 @@ function ProductDetail() {
 
         <div className="product__detail ">
           <h2 className="product__detail_title">{title}</h2>
+          <h3 className="stars">******</h3>
           <div className="product__action_price">
-            {priceConverter(price) + currency}
+            Price: {priceConverter(price) + currency}
           </div>
           <div className="quantity">
-            Quantity:
-            <p>{quantity}</p>
-            <div className="buttons">
-              <button onClick={handleAdd}>
-                <BiChevronUp />
-              </button>
-              <button onClick={handleSubtract}>
-                <BiChevronDown />
-              </button>
+            <div className="quantity__user">
+              Quantity:
+              <p>{quantity}</p>
+              <div className="buttons">
+                <button onClick={handleAdd}>
+                  <BiChevronUp />
+                </button>
+                <button onClick={handleSubtract}>
+                  <BiChevronDown />
+                </button>
+              </div>
             </div>
+
+            <div className="amount">Amount: {amount}</div>
           </div>
-          <div className="product__detail_addCart">
-            <Button>
-              Checkout{" "}
-              {quantity === 1 ? "" : priceConverter(checkout) + currency}
-            </Button>
-          </div>
+          <div className="product__detail_addCart"></div>
+
+          <Button>
+            Checkout {quantity === 1 ? "" : priceConverter(checkout) + currency}
+          </Button>
         </div>
       </div>
 
