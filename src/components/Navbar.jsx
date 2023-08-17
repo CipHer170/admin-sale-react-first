@@ -2,10 +2,15 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div>
-      <div className="logoBar"></div>
-      <div className="searchBar"></div>
-      <div className="user"></div>
+    <div className="navbar">
+      <div className="logoBar">Logo image</div>
+      <div className="searchBar">
+        <input type="text" />
+      </div>
+      <div className="user">
+        <button>card</button>
+        <button>user</button>
+      </div>
     </div>
   );
 }
