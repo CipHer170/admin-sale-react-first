@@ -33,10 +33,13 @@
       display: flex;
       flex-direction: column;
     }
-    &__describtion {
-      padding: 10px;
-      background-color: aquamarine;
-    }
+  }
+
+  &__description {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &__detail {
