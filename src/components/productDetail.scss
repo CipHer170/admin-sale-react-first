@@ -1,11 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .product {
   max-width: 1270px;
-  font-family: "Courier New", Courier, monospace;
   margin: 10px auto;
 
   &__wrapper {
@@ -77,6 +77,7 @@
   color: rgb(255, 242, 0);
   font-size: 30px;
 }
+
 @media (max-width: 1023px) {
   .product {
     max-width: 1023px;
@@ -115,6 +116,26 @@
     &__description {
       border-top: 1px solid gray;
       padding: 50px 20px 0 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .product {
+    max-width: 767px;
+    margin: 10px auto;
+    &__images {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__detail_title {
+      padding: 20px 0 0 0;
     }
   }
 }
