@@ -12,7 +12,7 @@ function Navbar() {
       <div className="navbar">
         <div className="logoBar">
           <img src={logoImage} alt="logo" />
-          Name of company
+          <h2>Name of company</h2>
         </div>
         <div className="searchBar">
           <input type="text" placeholder="Search" id="search" />
