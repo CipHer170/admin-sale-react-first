@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import "../Navbar/navbar.scss";
 import logoImage from "../../assets/logo_img.svg";
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import { CiSearch } from "react-icons/ci";
 import { FiShoppingBag } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import BaseContainer from "../BaseContainer/BaseContainer";
-import { Search } from "@mui/icons-material";
 function Navbar() {
   const [showInput, setShowInput] = useState(false);
   const handleSearchInput = () => {
