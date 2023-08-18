@@ -1,0 +1,29 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  &__links {
+    display: flex;
+    gap: 20px;
+  }
+  .link {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+  }
+  .facebook {
+    color: rgb(14, 14, 112);
+  }
+  .instagram {
+    // background: -webkit-linear-gradient(
+    //     #feda75,
+    //     #fa7e1e,
+    //     #d62976,
+    //     #962fbf,
+    //     #d62976
+    //   linear-gradient(336deg, #4f5bd5);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+  }
+}

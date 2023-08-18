@@ -99,11 +99,6 @@
       }
     }
 
-    &__detail {
-      // padding: 10px 10px;
-      // height: 30%;
-    }
-
     &__images {
       width: 700px;
       height: 70%;
@@ -159,10 +154,6 @@
       padding: 0;
       gap: 5px;
       margin-top: 10px;
-
-      &_addCard {
-        // margin: 10px 0 0 0;
-      }
     }
 
     &__description {
@@ -181,10 +172,6 @@
         align-items: center;
         gap: 10px;
       }
-    }
-
-    &__detail_title {
-      // padding: 20px 0 0 0;
     }
   }
 }
