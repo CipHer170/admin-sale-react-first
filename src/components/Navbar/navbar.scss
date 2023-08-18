@@ -30,10 +30,10 @@
   }
 
   @media (max-width: 767px) {
-    flex: 1;
+    // flex: 1;
     img {
-      width: 400px;
-      height: 140px;
+      width: 100px;
+      height: 80px;
     }
     h2 {
       font-size: 20px;
