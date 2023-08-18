@@ -1,7 +1,8 @@
 import React from "react";
+import BaseContainer from "../BaseContainer/BaseContainer";
 
 function Card() {
-  return <div>Card</div>;
+  return <BaseContainer>card empty</BaseContainer>;
 }
 
 export default Card;

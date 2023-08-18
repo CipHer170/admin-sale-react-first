@@ -1,7 +1,8 @@
 import React from "react";
+import BaseContainer from "../BaseContainer/BaseContainer";
 
 function UserProfile() {
-  return <div>UserProfile</div>;
+  return <BaseContainer>UserProfile</BaseContainer>;
 }
 
 export default UserProfile;
