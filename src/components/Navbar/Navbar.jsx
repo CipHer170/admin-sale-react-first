@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../Navbar/navbar.scss";
 import logoImage from "../../assets/logo_img.svg";
 import { Link } from "react-router-dom";
@@ -6,17 +6,29 @@ import { CiSearch } from "react-icons/ci";
 import { FiShoppingBag } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import BaseContainer from "../BaseContainer/BaseContainer";
+import { Search } from "@mui/icons-material";
 function Navbar() {
+  const [showInput, setShowInput] = useState(false);
+  const handleSearchInput = () => {
+    setShowInput(!showInput);
+  };
   return (
     <BaseContainer>
       <div className="navbar">
         <Link to={"/"} className="logoBar">
           <img src={logoImage} alt="logo" />
-          <h2>Name of company</h2>
+          <h2 className={showInput ? "hideLogoName" : "showLogoName"}>
+            Name of company
+          </h2>
         </Link>
         <div className="searchBar">
-          <input type="text" placeholder="Search" id="search" />
-          <label htmlFor="search">
+          <input
+            type="text"
+            placeholder="Search"
+            id="search"
+            className={showInput ? "searchShow" : "searchHide"}
+          />
+          <label htmlFor="search" onClick={handleSearchInput}>
             <CiSearch />
           </label>
         </div>

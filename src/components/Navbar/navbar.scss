@@ -38,6 +38,9 @@
     h2 {
       font-size: 20px;
     }
+    .hideLogoName {
+      display: none;
+    }
   }
 }
 .searchBar {
@@ -61,8 +64,12 @@
   }
   @media (max-width: 767px) {
     border: none;
-    input {
+    .searchHide {
       display: none;
+    }
+    .searchShow {
+      display: block;
+      padding: 0;
     }
   }
 }
