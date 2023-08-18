@@ -87,7 +87,7 @@ function ProductDetail() {
 
               <div className="amount">Amount: {amount}</div>
             </div>
-            <div className="product__detail_addCart"></div>
+            <div className="product__detail_addCard"></div>
 
             <Button>
               Checkout{" "}

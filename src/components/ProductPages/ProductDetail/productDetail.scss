@@ -36,7 +36,7 @@
   }
 
   &__description {
-    padding: 30px 0;
+    // padding: 30px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -67,7 +67,7 @@
     flex-direction: column;
   }
   button {
-    padding: 0;
+    // padding: 0;
     border: 0;
     background-color: inherit;
   }
@@ -93,7 +93,7 @@
       }
     }
     &__detail {
-      padding: 10px 10px;
+      // padding: 10px 10px;
       height: 30%;
     }
     &__images {
@@ -131,6 +131,32 @@
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+    &__detail {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-evenly;
+      padding: 0;
+      gap: 5px;
+      // flex: 1;
+      &_addCard {
+        // margin: 10px 0 0 0;
+      }
+    }
+    &__description {
+      margin: 20px 0 0 0;
+      padding: 10px 0 0 0;
+    }
+    .quantity {
+      font-size: 20px;
+      display: flex;
+      justify-content: space-around;
+      &__user {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 10px;
       }
     }
     &__detail_title {
