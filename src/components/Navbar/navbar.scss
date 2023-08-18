@@ -24,12 +24,19 @@
     height: 100%;
   }
   @media (max-width: 1023px) {
+    width: 300px;
+    height: 70px;
     border: 0;
   }
 
   @media (max-width: 767px) {
+    flex: 1;
+    img {
+      width: 400px;
+      height: 140px;
+    }
     h2 {
-      display: none;
+      font-size: 20px;
     }
   }
 }
@@ -53,14 +60,14 @@
     }
   }
   @media (max-width: 767px) {
+    border: none;
     input {
-      border: 0;
-      outline: none;
+      display: none;
     }
   }
 }
 
-.user {
+.user__info {
   font-size: 25px;
   display: flex;
   gap: 20px;

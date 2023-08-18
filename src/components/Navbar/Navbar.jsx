@@ -20,7 +20,7 @@ function Navbar() {
             <CiSearch />
           </label>
         </div>
-        <div className="user">
+        <div className="user__info">
           <Link to={"/user-card"}>
             <FiShoppingBag />
           </Link>
