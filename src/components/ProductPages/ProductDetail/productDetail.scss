@@ -13,10 +13,12 @@
     height: 500px;
     display: flex;
   }
+
   &__swiper {
     width: 100%;
     height: 100%;
   }
+
   &__images {
     width: 700px;
     height: 100%;
@@ -55,6 +57,7 @@
   font-size: 20px;
   justify-content: space-around;
   display: flex;
+
   &__user {
     display: flex;
     flex: 1;
@@ -62,10 +65,12 @@
     align-items: center;
     gap: 20px;
   }
+
   .buttons {
     display: flex;
     flex-direction: column;
   }
+
   button {
     // padding: 0;
     border: 0;
@@ -88,24 +93,29 @@
       height: 700px;
       display: flex;
       flex-direction: column;
+
       .swiper {
         width: 100%;
       }
     }
+
     &__detail {
       // padding: 10px 10px;
-      height: 30%;
+      // height: 30%;
     }
+
     &__images {
       width: 700px;
       height: 70%;
       overflow: hidden;
       margin: 0 auto;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+
     // .swiper-slide {
     // }
     &__amount {
@@ -126,11 +136,13 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+
     &__wrapper {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     &__images {
       width: 100%;
       height: 100%;
@@ -141,25 +153,28 @@
         height: 100%;
       }
     }
+
     &__detail {
-      display: flex;
       flex-direction: column;
-      justify-content: space-between;
       padding: 0;
       gap: 5px;
       margin-top: 10px;
+
       &_addCard {
         // margin: 10px 0 0 0;
       }
     }
+
     &__description {
       // margin: 20px 0 0 0;
       padding: 10px 0;
     }
+
     .quantity {
       font-size: 20px;
       display: flex;
       justify-content: space-around;
+
       &__user {
         display: flex;
         flex: 1;
@@ -167,6 +182,7 @@
         gap: 10px;
       }
     }
+
     &__detail_title {
       // padding: 20px 0 0 0;
     }
