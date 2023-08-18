@@ -10,10 +10,10 @@ function Navbar() {
   return (
     <BaseContainer>
       <div className="navbar">
-        <div className="logoBar">
+        <Link to={"/"} className="logoBar">
           <img src={logoImage} alt="logo" />
           <h2>Name of company</h2>
-        </div>
+        </Link>
         <div className="searchBar">
           <input type="text" placeholder="Search" id="search" />
           <label htmlFor="search">
@@ -21,10 +21,10 @@ function Navbar() {
           </label>
         </div>
         <div className="user">
-          <Link>
+          <Link to={"/user-card"}>
             <FiShoppingBag />
           </Link>
-          <Link>
+          <Link to={"/user-detail"}>
             <FaUserCircle />
           </Link>
         </div>
