@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
-import no_image from "../assets/no_image.jpg";
+import no_image from "../../../assets/no_image.jpg";
 import "./ProductCard.scss";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../../../context/productContext";
+import BaseContainer from "../../BaseContainer/BaseContainer";
 export default function ProductCard({ title, image, productItem, id, price }) {
   const [addToCartClick, setAddToCartClick] = useState(false);
   const { priceConverter, currency } = useContext(ProductContext);

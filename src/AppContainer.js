@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 // import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import Products from "./components/ProductPages/AllProducts/Products";
 import { ProductContext } from "./context/productContext";
 import { Route, Routes } from "react-router-dom";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail from "./components/ProductPages/ProductDetail/ProductDetail";
 
 function AppContainer() {
   const { getData } = useContext(ProductContext);
