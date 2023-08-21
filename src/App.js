@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <Provider className="App">
+    <Provider>
       <Navbar />
       <AppContainer />
       <Footer />

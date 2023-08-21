@@ -13,19 +13,17 @@ function Products() {
   // }
   return (
     <BaseContainer>
-      <div>
-        <div className="products">
-          {product?.map((productItem, index) => {
-            const productProps = { ...productItem, closeAll, setCloseAll };
-            return (
-              <ProductCard
-                {...productProps}
-                productItem={productItem}
-                key={productItem.id}
-              />
-            );
-          })}
-        </div>
+      <div className="products">
+        {product?.map((productItem, index) => {
+          const productProps = { ...productItem, closeAll, setCloseAll };
+          return (
+            <ProductCard
+              {...productProps}
+              productItem={productItem}
+              key={productItem.id}
+            />
+          );
+        })}
       </div>
     </BaseContainer>
   );

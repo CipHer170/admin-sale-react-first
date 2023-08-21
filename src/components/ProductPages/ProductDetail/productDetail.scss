@@ -5,8 +5,9 @@
 }
 
 .product {
+  // width: 1440px;
   // max-width: 1270px;
-  margin: 0 0 20px 0d;
+  // margin: 0 0 20px 0;
 
   &__wrapper {
     width: 100%;
@@ -128,10 +129,6 @@
 
 @media (max-width: 767px) {
   .product {
-    max-width: 767px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
 
     &__wrapper {
       display: flex;

@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
 import no_image from "../../../assets/no_image.jpg";
-import "./ProductCard.scss";
+import "../ProductCard/ProductCard.scss";
 import { ProductContext } from "../../../context/productContext";
 export default function ProductCard({ title, image, productItem, id, price }) {
   const [addToCartClick, setAddToCartClick] = useState(false);
