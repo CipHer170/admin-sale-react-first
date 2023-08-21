@@ -1,6 +1,7 @@
 .footer {
   display: grid;
   grid-template-columns: repeat(2, 50%);
+  gap: 20px;
   &__links {
     display: flex;
     gap: 20px;
@@ -15,15 +16,20 @@
   .facebook {
     color: rgb(14, 14, 112);
   }
-  .instagram {
-    // background: -webkit-linear-gradient(
-    //     #feda75,
-    //     #fa7e1e,
-    //     #d62976,
-    //     #962fbf,
-    //     #d62976
-    //   linear-gradient(336deg, #4f5bd5);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
+  @media (max-width: 1023px) {
+    // padding: 20px 0;
+  }
+  @media (max-width: 767px) {
+    &__links {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .link {
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
+      border: 1px solid black;
+      border-radius: 50px;
+    }
   }
 }
