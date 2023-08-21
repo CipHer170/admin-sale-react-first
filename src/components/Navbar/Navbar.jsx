@@ -12,35 +12,37 @@ function Navbar() {
     setShowInput(!showInput);
   };
   return (
-    <BaseContainer>
-      <div className="navbar">
-        <Link to={"/"} className="logoBar">
-          <img src={logoImage} alt="logo" />
-          <h2 className={showInput ? "hideLogoName" : "showLogoName"}>
-            Name of company
-          </h2>
-        </Link>
-        <div className="searchBar">
-          <input
-            type="text"
-            placeholder="Search"
-            id="search"
-            className={showInput ? "searchShow" : "searchHide"}
-          />
-          <label htmlFor="search" onClick={handleSearchInput}>
-            <CiSearch />
-          </label>
-        </div>
-        <div className="user__info">
-          <Link to={"/user-card"}>
-            <FiShoppingBag />
+    <div>
+      <BaseContainer>
+        <div className="navbar">
+          <Link to={"/"} className="logoBar">
+            <img src={logoImage} alt="logo" />
+            <h2 className={showInput ? "hideLogoName" : "showLogoName"}>
+              Name of company
+            </h2>
           </Link>
-          <Link to={"/user-detail"}>
-            <FaUserCircle />
-          </Link>
+          <div className="searchBar">
+            <input
+              type="text"
+              placeholder="Search"
+              id="search"
+              className={showInput ? "searchShow" : "searchHide"}
+            />
+            <label htmlFor="search" onClick={handleSearchInput}>
+              <CiSearch />
+            </label>
+          </div>
+          <div className="user__info">
+            <Link to={"/user-card"}>
+              <FiShoppingBag />
+            </Link>
+            <Link to={"/user-detail"}>
+              <FaUserCircle />
+            </Link>
+          </div>
         </div>
-      </div>
-    </BaseContainer>
+      </BaseContainer>
+    </div>
   );
 }
 

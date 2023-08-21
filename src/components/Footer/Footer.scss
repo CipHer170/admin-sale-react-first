@@ -1,9 +1,9 @@
 .footer {
   display: flex;
-  padding: 20px 0;
+  padding: 10px 0;
   border-top: 1px solid gray;
   gap: 20px;
-
+  min-height: 50px;
   &__info {
     padding: 0 10px;
   }
