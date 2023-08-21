@@ -36,8 +36,8 @@ function ProductDetail() {
   const checkout = quantity * price;
 
   return (
-      <div className="product">
-     <BaseContainer>
+    <div className="product">
+      <BaseContainer>
         <div className="product__wrapper" display={"flex"}>
           <div className="product__images">
             <Swiper
@@ -100,8 +100,8 @@ function ProductDetail() {
           <h2>Description</h2>
           {description}
         </div>
-    </BaseContainer>
-      </div>
+      </BaseContainer>
+    </div>
   );
 }
 

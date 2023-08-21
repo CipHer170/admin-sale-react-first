@@ -26,7 +26,7 @@ export default function ProductCard({ title, image, productItem, id, price }) {
         <div className="card__action">
           <p>{priceConverter(price) + currency} </p>
           <Button onClick={handleAddToCartClick}>
-            <AddShoppingCartIcon />{" "}
+            <AddShoppingCartIcon />
           </Button>
         </div>
       </div>

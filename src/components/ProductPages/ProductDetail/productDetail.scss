@@ -5,9 +5,8 @@
 }
 
 .product {
-  // width: 1440px;
-  // max-width: 1270px;
-  // margin: 0 0 20px 0;
+  display: flex;
+  word-break: break-all;
 
   &__wrapper {
     width: 100%;
@@ -59,7 +58,6 @@
   font-size: 20px;
   justify-content: space-around;
   display: flex;
-
   &__user {
     display: flex;
     flex: 1;
@@ -129,7 +127,6 @@
 
 @media (max-width: 767px) {
   .product {
-
     &__wrapper {
       display: flex;
       flex-direction: column;
