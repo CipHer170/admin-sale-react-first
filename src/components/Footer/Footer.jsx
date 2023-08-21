@@ -35,11 +35,11 @@ function Footer() {
               <BiLogoTwitter />
             </a>
           </div>
-          <Link className="footer__logo">
-            <img src={logoImage} alt="logo" className="footer__logo__image" />
-            <h2>Name of company</h2>
-          </Link>
         </div>
+        <Link className="footer__logo">
+          <img src={logoImage} alt="logo" className="footer__logo__image" />
+          <h2>Name of company</h2>
+        </Link>
       </div>
     </BaseContainer>
   );

@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider>
       <Navbar />
-      <AppContainer />
+      {/* <AppContainer /> */}
       <Footer />
       <ScrollToTop />
     </Provider>
