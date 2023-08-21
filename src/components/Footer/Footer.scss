@@ -27,21 +27,19 @@
       &_wrapper {
         display: flex;
         gap: 20px;
-        background-color: aquamarine;
       }
     }
     .link {
       width: 25px;
       height: 25px;
       font-size: 25px;
-      border: 1px solid red;
+      border: 1px solid inherit;
       border-radius: 50px;
     }
   }
   &__logo {
     width: 200px;
     height: 60px;
-    padding: 0;
     // background-color: gray;
     img {
       width: 100%;
