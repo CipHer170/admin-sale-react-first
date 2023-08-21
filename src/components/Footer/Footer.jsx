@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.scss";
+import logoImage from "../../assets/logo_img.svg";
+
 import BaseContainer from "../BaseContainer/BaseContainer";
 import {
   BiLogoFacebook,
@@ -7,6 +9,7 @@ import {
   BiLogoTwitter,
   BiLogoYoutube,
 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,18 +21,23 @@ function Footer() {
           repudiandae dolor!
         </div>
         <div className="footer__links">
-          <a href="/" className="link facebook">
-            <BiLogoFacebook />
-          </a>
-          <a href="/" className="link instagram">
-            <BiLogoInstagram />
-          </a>
-          <a href="/" className="link youtube">
-            <BiLogoYoutube />
-          </a>
-          <a href="/" className="link twitter">
-            <BiLogoTwitter />
-          </a>
+          <div className="footer__links_wrapper">
+            <a href="/" className="link facebook">
+              <BiLogoFacebook />
+            </a>
+            <a href="/" className="link instagram">
+              <BiLogoInstagram />
+            </a>
+            <a href="/" className="link youtube">
+              <BiLogoYoutube />
+            </a>
+            <a href="/" className="link twitter">
+              <BiLogoTwitter />
+            </a>
+          </div>
+          <Link className="footer__logo">
+            <img src={logoImage} alt="logo" className="logoBar footer__logo" />
+          </Link>
         </div>
       </div>
     </BaseContainer>
