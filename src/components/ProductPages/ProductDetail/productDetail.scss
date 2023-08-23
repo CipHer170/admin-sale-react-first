@@ -10,7 +10,7 @@
 
   &__wrapper {
     width: 100%;
-    height: 500px;
+    // height: 500px;
     display: flex;
   }
 
@@ -28,17 +28,9 @@
       width: 100%;
       height: 100%;
     }
-
-    &__wrapper {
-      width: 100%;
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-    }
   }
 
   &__description {
-    // padding: 30px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,6 +50,7 @@
   font-size: 20px;
   justify-content: space-around;
   display: flex;
+  flex-wrap: wrap;
   &__user {
     display: flex;
     flex: 1;
@@ -72,7 +65,6 @@
   }
 
   button {
-    // padding: 0;
     border: 0;
     background-color: inherit;
   }
@@ -120,7 +112,7 @@
 
     &__description {
       border-top: 1px solid gray;
-      padding: 50px 20px 0 20px;
+      padding: 50px 20px 50px 20px;
     }
   }
 }
@@ -152,7 +144,6 @@
     }
 
     &__description {
-      // margin: 20px 0 0 0;
       padding: 10px 0;
     }
 

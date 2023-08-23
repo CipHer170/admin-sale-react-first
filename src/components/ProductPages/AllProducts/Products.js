@@ -14,7 +14,7 @@ function Products() {
   return (
     <BaseContainer>
       <div className="products">
-        {product?.map((productItem, index) => {
+        {product?.map((productItem) => {
           const productProps = { ...productItem, closeAll, setCloseAll };
           return (
             <ProductCard
