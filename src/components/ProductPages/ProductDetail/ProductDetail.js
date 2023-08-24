@@ -11,6 +11,9 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import BaseContainer from "../../BaseContainer/BaseContainer";
+import no_image from "../../../assets/no_image.jpg";
+// import ReviewImage from "./ReviewImage";
+// import ReviewImage from "./ReviewImage";
 
 function ProductDetail() {
   const { product = [], priceConverter, currency } = useContext(ProductContext);
@@ -34,7 +37,8 @@ function ProductDetail() {
     return null;
   }
   const checkout = quantity * price;
-
+  // const nextPage = <ReviewImage image={imageList.img} />;
+  console.log(imageList);
   return (
     <div className="product">
       <BaseContainer>
@@ -57,8 +61,16 @@ function ProductDetail() {
             >
               {imageList.map((img, index) => {
                 return (
-                  <SwiperSlide className="product__images_slide" key={index}>
-                    <img src={img} alt="images fruit" key={index} />
+                  <SwiperSlide
+                    className="product__images_slide"
+                    key={index}
+                    // onClick={nextPage}
+                  >
+                    <img
+                      src={img ? img : no_image}
+                      alt="images fruit"
+                      key={index}
+                    />
                   </SwiperSlide>
                 );
               })}

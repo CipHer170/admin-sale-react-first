@@ -12,24 +12,27 @@ export default function ProductCard({ title, image, productItem, id, price }) {
   const handleAddToCartClick = (id) => {
     if (id === productItem.id) {
       setAddToCartClick(!addToCartClick);
+      console.log("hello");
     }
   };
   const imageNotNull = image ? image : no_image;
 
   return (
-    <Link to={`/product-detail/${id}`} className="card">
-      <div className="card__image">
-        <img src={imageNotNull} alt="product_image" />
-      </div>
-      <div className="card__description">
-        <h2 className="card__title">{title}</h2>
-        <div className="card__action">
-          <p>{priceConverter(price) + currency} </p>
-          <Button onClick={handleAddToCartClick}>
-            <AddShoppingCartIcon />
-          </Button>
+    <div className="card">
+      <Link to={`/product-detail/${id}`} className="card__container">
+        <div className="card__image">
+          <img src={imageNotNull} alt="product_image" />
         </div>
+        <div className="card__description">
+          <div className="card__title">{title}</div>
+          <div className="card__action">{priceConverter(price) + currency}</div>
+        </div>
+      </Link>
+      <div className="btn">
+        <Button onClick={handleAddToCartClick} className="btn__cart">
+          <AddShoppingCartIcon />
+        </Button>
       </div>
-    </Link>
+    </div>
   );
 }

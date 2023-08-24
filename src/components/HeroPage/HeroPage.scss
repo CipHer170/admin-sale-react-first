@@ -1,0 +1,22 @@
+.hero {
+  display: flex;
+  align-items: center;
+  height: 500px;
+  @media (max-width: 1023px) {
+
+}
+}
+.heroSwiper {
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.heroImagesSlide {
+  a {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
