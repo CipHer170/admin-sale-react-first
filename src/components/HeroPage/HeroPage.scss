@@ -1,10 +1,5 @@
 .hero {
-  display: flex;
-  align-items: center;
-  height: 500px;
-  @media (max-width: 1023px) {
-
-}
+  padding: 20px 0;
 }
 .heroSwiper {
   border-radius: 20px;
@@ -18,5 +13,14 @@
   img {
     height: 100%;
     width: 100%;
+  }
+}
+@media (max-width: 1023px) {
+  .swiper {
+    background-color: aqua;
+  }
+  .heroSwiper {
+    display: flex;
+    background-color: bisque;
   }
 }

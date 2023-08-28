@@ -1,4 +1,3 @@
-import React from "react";
 import "./BaseContainer.scss";
 
 export default function BaseContainer({ children, className }) {

@@ -1,4 +1,3 @@
-import React from "react";
 import BaseContainer from "../BaseContainer/BaseContainer";
 
 function UserProfile() {
