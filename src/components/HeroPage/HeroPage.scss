@@ -13,14 +13,6 @@
   img {
     height: 100%;
     width: 100%;
-  }
-}
-@media (max-width: 1023px) {
-  .swiper {
-    background-color: aqua;
-  }
-  .heroSwiper {
-    display: flex;
-    background-color: bisque;
+    border-radius: 20px;
   }
 }
