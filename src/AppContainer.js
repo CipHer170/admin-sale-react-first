@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductDetail from "./components/ProductPages/ProductDetail/ProductDetail";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Card from "./components/Card/Card";
+import HeroPage from "./components/HeroPage/HeroPage";
 
 function AppContainer() {
   const { getData } = useContext(ProductContext);
@@ -21,6 +22,8 @@ function AppContainer() {
         path="/"
         element={
           <div className="App">
+            <HeroPage />
+
             <Products />
           </div>
         }
