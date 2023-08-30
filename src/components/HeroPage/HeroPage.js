@@ -43,7 +43,7 @@ function HeroPage() {
           {imageList.map((img, index) => {
             return (
               <SwiperSlide className="heroImagesSlide" key={index}>
-                <a href="www.google.com">
+                <a>
                   <img src={img.image} alt="images fruit" key={index} />
                 </a>
               </SwiperSlide>
