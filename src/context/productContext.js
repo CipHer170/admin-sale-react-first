@@ -12,10 +12,16 @@ function Provider({ children }) {
   };
 
   const getData = async () => {
-    const res = await axios.get(
-      `https://shop-5138f-default-rtdb.firebaseio.com/dashboard.json`
-    );
-    setProduct(dataFormatter(res.data));
+    try {
+      const res = await axios.get(
+        `https://shop-5138f-default-rtdb.firebaseio.com/dashboard.json`
+        // `http://ziyo.tech/api/v1/courses/`
+      );
+      setProduct(dataFormatter(res.data));
+      // setProduct(res.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   function priceConverter(num) {
