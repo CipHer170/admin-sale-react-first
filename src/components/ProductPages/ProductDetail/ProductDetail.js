@@ -50,6 +50,7 @@ function ProductDetail() {
                 "--swiper-navigation-color": "#fff",
                 "--swiper-pagination-color": "#fff",
               }}
+              // hello
               loop={true}
               slidesPerView={1}
               spaceBetween={10}
